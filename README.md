@@ -9,6 +9,11 @@ latest code for reinforcement learning
 
 # description
 reinforcement learning examples. refer to the [article](https://daddynkidsmakers.blogspot.com/2023/12/blog-post_25.html)
+# installation
+conda create -n venv_rl python
+conda activate venv_rl
+pip install mpi4py numpy pandas pytest psutil scipy seaborn tensorflow torch tqdm joblib ipython gym gymnasium[classic_control]
+pip install stable_baselines3 shimmy yfinance
 
 # license
 MIT license
