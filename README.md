@@ -2,7 +2,7 @@
 latest code for reinforcement learning 
 <p align="center">
 <img height="300" src="https://github.com/mac999/reinforcement_learning/blob/main/fig1.JPG"/></br>
-<img height="300" src="https://github.com/mac999/reinforcement_learning/blob/main/stock_data.JPG"/>
+<img height="280" src="https://github.com/mac999/reinforcement_learning/blob/main/stock_data.JPG"/>
 <img height="300" src="https://github.com/mac999/reinforcement_learning/blob/main/stock_ppo.JPG"/>
 <img height="300" src="https://github.com/mac999/reinforcement_learning/blob/main/stock_ppo2.JPG"/>></br>
 <img height="300" src="https://github.com/mac999/reinforcement_learning/blob/main/entsoe_eu_france_energy.JPG"/>
