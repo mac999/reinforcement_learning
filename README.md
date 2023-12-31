@@ -1,5 +1,5 @@
-# reinforcement_learning
-best code example for reinforcement learning 
+# good reinforcement learning sample code
+good sample code for reinforcement learning 
 
 # description
 reinforcement learning examples such as Cart Pole, Stock trading, Energy battery operation optimization using tf_agents, gym, stable_baselines3</br> 
