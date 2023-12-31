@@ -1,7 +1,8 @@
 # reinforcement_learning
 latest code for reinforcement learning 
 <p align="center">
-<img height="300" src="https://github.com/mac999/reinforcement_learning/blob/main/fig1.JPG"/></br>
+<img height="200" src="https://github.com/mac999/reinforcement_learning/blob/main/fig1.JPG"/>
+<img height="200" src="https://github.com/mac999/reinforcement_learning/blob/main/cartpole.git"/></br>
 <img height="280" src="https://github.com/mac999/reinforcement_learning/blob/main/stock_data.JPG"/></br>
 <img height="290" src="https://github.com/mac999/reinforcement_learning/blob/main/stock_ppo.JPG"/>
 <img height="290" src="https://github.com/mac999/reinforcement_learning/blob/main/stock_ppo2.JPG"/></br>
