@@ -8,7 +8,8 @@ latest code for reinforcement learning
 </p>
 
 # description
-reinforcement learning examples. refer to the [article](https://daddynkidsmakers.blogspot.com/2023/12/blog-post_25.html)
+reinforcement learning examples such as Cart Pole, Stock Trading using tf_agents, gym, stable_baselines3</br> 
+refer to the [article](https://daddynkidsmakers.blogspot.com/2023/12/blog-post_25.html)</br>
 # installation
 conda create -n venv_rl python</br>
 conda activate venv_rl</br>
