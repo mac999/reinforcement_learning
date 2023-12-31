@@ -1,5 +1,9 @@
 # reinforcement_learning
-latest code for reinforcement learning 
+best code example for reinforcement learning 
+
+# description
+reinforcement learning examples such as Cart Pole, Stock trading, Energy battery operation optimization using tf_agents, gym, stable_baselines3</br> 
+refer to the [article](https://daddynkidsmakers.blogspot.com/2023/12/blog-post_25.html)</br>
 <p align="center">
 <img height="250" src="https://github.com/mac999/reinforcement_learning/blob/main/fig1.JPG"/>
 <img height="250" src="https://github.com/mac999/reinforcement_learning/blob/main/cartpole.gif"/></br>
@@ -10,9 +14,6 @@ latest code for reinforcement learning
 <img height="300" src="https://github.com/mac999/reinforcement_learning/blob/main/energy_op.JPG"/>
 </p>
 
-# description
-reinforcement learning examples such as Cart Pole, Stock trading, Energy battery operation optimization using tf_agents, gym, stable_baselines3</br> 
-refer to the [article](https://daddynkidsmakers.blogspot.com/2023/12/blog-post_25.html)</br>
 # installation
 conda create -n venv_rl python</br>
 conda activate venv_rl</br>
