@@ -3,8 +3,8 @@ import numpy as np
 import pandas as pd
 
 # 강화 학습용 구글 주가 데이터 준비
-ticker = "GOOG"         # Google stock market symbol
-data = yf.download(ticker, start="2022-01-01", end="2024-12-31")    # Download the historical price data
+ticker = "AAPL"         # Google stock market symbol
+data = yf.download(ticker, start="2020-01-01", end="2024-12-31")    # Download the historical price data
 print(data.head())      # Display the first few rows of the data
 data = data.dropna()    # Remove missing values from the data
 
@@ -20,7 +20,7 @@ train_data = data[:train_size]
 test_data = data[train_size:]
 
 # 강화 학습 환경 준비
-from stable_baselines3 import PPO
+from stable_baselines3 import PPO, A2C
 import gym
 class TradingEnvironment(gym.Env):
     def __init__(self, data):
@@ -68,7 +68,7 @@ class TradingEnvironment(gym.Env):
 # 강화학습
 env = TradingEnvironment(train_data)        # Create the trading environment
 model = PPO("MlpPolicy", env, verbose=1)    # Initialize the PPO model
-model.learn(total_timesteps=10000)          # Train the model   
+model.learn(total_timesteps=30000)          # Train the model   
 
 # 학습된 모델로 주식 거래 시뮬레이션
 def simulate_trading_strategy(model, data):
