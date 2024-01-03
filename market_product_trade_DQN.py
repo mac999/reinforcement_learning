@@ -10,15 +10,14 @@ from plotly.offline import init_notebook_mode, iplot, iplot_mpl
 from collections import namedtuple, deque
 
 # 주식 데이터 로딩 
-workingDir = r'./Stock_DRL/StockData'
-data = pd.read_csv('./AAPl2.csv') # os.path.join(workingDir,r'BAUTO.csv'))
+data = pd.read_csv('./AAPl2.csv') 
 data['Date'] = pd.to_datetime(data['Date'])
 data = data.set_index('Date')
 print(data.index.min(), data.index.max())
 data.head()
 
 # 학습, 테스트 데이터 분할
-date_split = '2022-01-01' # '2016-01-01'
+date_split = '2022-01-01'
 train = data[:date_split]
 test = data[date_split:]
 print(len(train), len(test))
