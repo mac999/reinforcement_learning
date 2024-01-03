@@ -11,7 +11,10 @@ refer to the [article](https://daddynkidsmakers.blogspot.com/2023/12/blog-post_2
 <img height="290" src="https://github.com/mac999/reinforcement_learning/blob/main/stock_ppo.JPG"/>
 <img height="290" src="https://github.com/mac999/reinforcement_learning/blob/main/stock_ppo2.JPG"/></br>
 <img height="300" src="https://github.com/mac999/reinforcement_learning/blob/main/entsoe_eu_france_energy.JPG"/>
-<img height="300" src="https://github.com/mac999/reinforcement_learning/blob/main/energy_op.JPG"/>
+<img height="300" src="https://github.com/mac999/reinforcement_learning/blob/main/energy_op.JPG"/></br>
+<img height="200" src="https://github.com/mac999/reinforcement_learning/blob/main/product1.JPG"/></br>
+<img height="300" src="https://github.com/mac999/reinforcement_learning/blob/main/product2.JPG"/>
+<img height="300" src="https://github.com/mac999/reinforcement_learning/blob/main/product3.JPG"/>
 </p>
 
 # installation
