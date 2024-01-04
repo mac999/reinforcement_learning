@@ -258,7 +258,7 @@ agent = Agent(state_size, action_size, 99, False)
 env = StockMarketEnv(train)
 
 start_time = time.time()
-episode_count = 50  # 
+episode_count = 1000  # 50
 scores_dqn_base, reward, total_profits_history = train_DQN(n_episodes=episode_count, pth_file='checkpoint_dqn.pth')
 print("Total run time to achieve average score : %s seconds " % (time.time() - start_time))
 
