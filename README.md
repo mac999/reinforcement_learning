@@ -15,7 +15,7 @@ refer to the [article](https://daddynkidsmakers.blogspot.com/2023/12/blog-post_2
 <img height="300" src="https://github.com/mac999/reinforcement_learning/blob/main/product1.JPG"/></br>
 <img height="200" src="https://github.com/mac999/reinforcement_learning/blob/main/product2.JPG"/>
 <img height="200" src="https://github.com/mac999/reinforcement_learning/blob/main/product3.JPG"/>
-<img height="200" src="https://github.com/mac999/reinforcement_learning/blob/main/profit.JPG"/>
+<img height="200" src="https://github.com/mac999/reinforcement_learning/blob/main/profit2.JPG"/>
 </p>
 
 # installation
