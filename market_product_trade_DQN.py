@@ -49,6 +49,7 @@ class StockMarketEnv:
     def reset(self):
         self.t = 0
         self.done = False
+        self.total_profits = 0
         self.profits = 0
         self.positions = []
         self.position_value = 0
@@ -73,6 +74,8 @@ class StockMarketEnv:
                 self.profits += profits
                 self.positions = []
         
+        self.total_profits += self.profits
+
         self.t += 1 # 관찰 시점 다음 이동
         self.position_value = 0
         for p in self.positions:
@@ -217,9 +220,10 @@ class ReplayBuffer:
         return len(self.memory)
 
 def train_DQN(n_episodes=1500, max_t=300, eps_start=1.0, eps_end=0.01, eps_decay=0.995,pth_file = 'checkpoint.pth'):
-    eps = eps_start                       # initialize the score
+    eps = eps_start                     # initialize the score
     scores_window = deque(maxlen=100)   # 스코어 저장 큐
     scores = []
+    total_profits_history = []
     logging.info('Starting of agent training ......')
     for episode in range(1,n_episodes+1):
         next_state, reward, done = env.reset()  # 환경 초기화
@@ -237,7 +241,8 @@ def train_DQN(n_episodes=1500, max_t=300, eps_start=1.0, eps_end=0.01, eps_decay
                 break
         scores.append(score)
         scores_window.append(score)       # 현재 스코어 저장
-        
+        total_profits_history.append(env.total_profits)
+
         print('\rEpisode {}\tAverage Score: {:.2f}'.format(episode, np.mean(scores_window)), end="")
         if episode % 100 == 0:
             print('\rEpisode {}\tAverage Score: {:.2f}'.format(episode, np.mean(scores_window)))
@@ -245,7 +250,7 @@ def train_DQN(n_episodes=1500, max_t=300, eps_start=1.0, eps_end=0.01, eps_decay
             print('\nEnvironment solved in {:d} episodes!\tAverage Score: {:.2f}'.format(episode-100, np.mean(scores_window)))
             torch.save(agent.qnetwork_local.state_dict(), pth_file)
             break
-    return scores, reward
+    return scores, reward, total_profits_history
 
 state_size = 91 # 90일 이전 가격 + 현재 가격 상태 데이터 획득을 위한 크기 변수
 action_size = 3 # 보유 = 0 , 구매 = 1 , 판매 = 2
@@ -254,11 +259,19 @@ env = StockMarketEnv(train)
 
 start_time = time.time()
 episode_count = 50  # 
-scores_dqn_base, reward = train_DQN(n_episodes=episode_count, pth_file='checkpoint_dqn.pth')
+scores_dqn_base, reward, total_profits_history = train_DQN(n_episodes=episode_count, pth_file='checkpoint_dqn.pth')
 print("Total run time to achieve average score : %s seconds " % (time.time() - start_time))
 
 # plot results
 import matplotlib.pyplot as plt
+fig = plt.figure()
+ax = fig.add_subplot(111)
+plt.plot(np.arange(len(total_profits_history)), total_profits_history)  # 이익
+plt.ylabel('Profit')
+plt.xlabel('Episode #')
+plt.title('DQN Reward Graph over Time for Profit')
+plt.show()
+
 fig = plt.figure()
 ax = fig.add_subplot(111)
 plt.plot(np.arange(len(scores_dqn_base)), scores_dqn_base)  # 개별 보상 스코어
@@ -267,7 +280,6 @@ plt.xlabel('Episode #')
 plt.title('DQN Reward Graph over Time for Stock Price')
 plt.show()
 
-import matplotlib.pyplot as plt
 fig = plt.figure()
 ax = fig.add_subplot(111)
 plt.plot(np.arange(len(pd.Series(scores_dqn_base).rolling(10).mean())), pd.Series(scores_dqn_base).rolling(10).mean())  # 평균 보상 스코어
@@ -275,4 +287,4 @@ plt.ylabel('Score')
 plt.xlabel('Episode #')
 plt.title('DQN Reward Graph over Time for Stock Price')
 plt.show()
-
+input()
